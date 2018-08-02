@@ -1,0 +1,15 @@
+package com.spstes.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.portlet.ModelAndView;
+
+@Controller
+public class Passenger {
+	@RequestMapping("/passenger")
+	public ModelAndView searchProfessionAndCourse() {
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.setViewName("/WEB-INF/jsp/passenger.jsp");
+		return modelAndView;
+	}
+}
