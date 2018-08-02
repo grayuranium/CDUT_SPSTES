@@ -3,10 +3,39 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spstes.dao.PassengerDao">
-	<select id="getPreparedMajor" resultType="Cat">
-     	select * from tb_cat where CatID = #{id}
+	<select id="getPreparedMajor" resultType="PreparedMajor">
+     	select major_name, 
+	     	DATE_FORMAT(Estart_time,'%Y-%m-%d') as 'begin_date', 
+	     	DATE_FORMAT(Estop_time, '%Y-%m-%d') as 'end_date', 
+	     	test_time.exa_num, 
+	     	test_name, 
+	     	prof_level, 
+	     	Prof_type
+			from major, 
+			kaikao_major, 
+			test_placeandkaikao_major, 
+			test_time, 
+			test_place
+			where Estop_time > NOW() and major.majorID = kaikao_major.majorID
+			and kaikao_major.exa_num = test_time.exa_num and kaikao_major.exa_majorID = test_placeandkaikao_major.exa_majorID
+			and test_placeandkaikao_major.exaID = test_place.exaID;
     </select>
-    <select id="getPreparedCourse" resultType="Cat">
-     	select * from tb_cat where CatID = #{id}
+    <select id="getPreparedCourse" resultType="PreparedCourse">
+     	select course_name, 
+			major_name, 
+			exa_day, 
+			exa_time, 
+			exa_method, 
+			test_time.exa_num, 
+			exa_cost
+			from major,
+			kaikao_major, 
+			test_time,
+			course, 
+			kaikao_course
+			where Estop_time > NOW() and major.majorID = kaikao_major.majorID
+			and kaikao_major.exa_num = test_time.exa_num 
+			and kaikao_major.exa_majorID = kaikao_course.exa_majorID 
+			and kaikao_course.courseID = course.courseID
     </select>
 </mapper>
