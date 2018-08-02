@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spstes.dao.TestTimeDao">
+	<select id="getLimitedTestTime" resultType="TestTime">
+     	select exa_num, 
+			date_format(Estart_time, '%Y-%m-%d %H:%i') as Estart_time,
+			date_format(Estop_time, '%Y-%m-%d %H:%i') as Estop_time,
+			freeze,
+			date_format(Bstart_time, '%Y-%m-%d %H:%i') as Bstart_time,
+			date_format(Bend_time, '%Y-%m-%d %H:%i') as Bend_time
+			from test_time
+			order by Estart_time, Bstart_time
+			limit #{fromIndex}, #{amount};
+    </select>
+    
+	<insert id="addTestTime" parameterType="TestTime">
+	    insert into test_time  values 
+	    (#{exa_num}, #{Estart_time}, #{Estop_time}, #{freeze}, #{Bstart_time}, #{Bend_time});
+	</insert>
+	
+	<update id="updateTestTimeByInstance" parameterType="TestTime">
+	    update test_time
+	    set Estart_time = #{Estart_time},
+	    Estop_time = #{Estop_time},
+	    freeze = #{freeze},
+	    Bstart_time = #{Bstart_time},
+	    Bend_time = #{Bend_time}
+	    where exa_num = #{exa_num};
+	</update>
+</mapper>

@@ -6,14 +6,14 @@ import java.math.BigInteger;
 public class UserInfo implements Serializable {
 	private static final long serialVersionUID = -3025151142074903613L;
 
-	private int info_ID;
+	private Integer info_ID;
 	private BigInteger majorID;
 	private String IDcard;
 	private String user_name;
 	private String login_name;
 	private String user_paw;
 	private String user_sex;
-	private int user_age;
+	private Integer user_age;
 	private String telphone;
 	private String Email;
 	private String edu_standard;
@@ -26,7 +26,7 @@ public class UserInfo implements Serializable {
 		return info_ID;
 	}
 
-	public void setInfo_ID(int info_ID) {
+	public void setInfo_ID(Integer info_ID) {
 		this.info_ID = info_ID;
 	}
 
@@ -82,7 +82,7 @@ public class UserInfo implements Serializable {
 		return user_age;
 	}
 
-	public void setUser_age(int user_age) {
+	public void setUser_age(Integer user_age) {
 		this.user_age = user_age;
 	}
 

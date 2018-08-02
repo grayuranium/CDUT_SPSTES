@@ -1,8 +1,11 @@
 package com.spstes.model;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 
-public class ExamineeInfo {
+public class ExamineeInfo implements Serializable {
+	private static final long serialVersionUID = 6870227443921708287L;
+
 	private BigInteger exa_stuID;
 	private BigInteger tex_exaID;
 	private int info_ID;
