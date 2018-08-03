@@ -10,6 +10,9 @@
      	select * from user_info where IDcard = #{IDCard};
     </select>
     <insert id="addUser" parameterType="UserInfo">
+        <selectKey keyProperty="info_ID" order="AFTER" resultType="Integer">
+            select max(info_ID) as info_ID from user_info;
+        </selectKey>
         insert into user_info values (#{info_ID}, #{majorID}, #{IDcard}, #{user_name}, #{login_name}, #{user_paw}, #{user_sex}, #{user_age}, #{telphone}, #{Email}, #{edu_standard});
     </insert>
 </mapper>

@@ -10,6 +10,5 @@ public interface RegisterDao {
 
 	public UserInfo finUserByIDCard(@Param("IDCard") String IDCard);
 
-	public int addUser(UserInfo user);
-
+	public int addUser(@Param("user") UserInfo user);
 }

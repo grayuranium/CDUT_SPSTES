@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spstes.dao.ExamineeDao">
+    
+	<insert id="addExaminee" parameterType="ExamineeInfo">
+	   	insert into examinee_info values
+	   	(#{exa_stuID}, #{tex_exaID}, #{info_ID}, #{exa_majorID}, #{exa_num}, #{exaID}, #{pass});
+	</insert>
+	
+</mapper>
