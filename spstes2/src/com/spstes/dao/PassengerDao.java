@@ -1,8 +1,14 @@
 package com.spstes.dao;
 
+import java.util.ArrayList;
+
+import com.spstes.model.PreparedCourse;
+import com.spstes.model.PreparedMajor;
+
 public interface PassengerDao {
 
-	public void getPreparedMajor();
+	public ArrayList<PreparedMajor> getPreparedMajor();
 
-	public void getPreparedCourse();
+	public ArrayList<PreparedCourse> getPreparedCourse();
+
 }
