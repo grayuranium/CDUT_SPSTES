@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spstes.dao.CourseGradeDao">
+	<select id="getAllCourseGradeByUserId" parameterType="Integer" resultType="com.spstes.model.CourseGrade">
+     	select
+			login_name,
+			test_time.exa_num,
+			test_time.Estart_time,
+			test_time.Estop_time,
+			grade_table.grade,
+			course.course_Ename,
+			grade_table.gradeID,
+			grade_table.ID,
+			grade_table.exa_stuID,
+			grade_table.courseID
+			from grade_table,
+			examinee_info,
+			user_info,
+			test_time,
+			kaikao_course,
+			course
+			where user_info.info_ID = examinee_info.info_ID
+			and examinee_info.exa_num = test_time.exa_num
+			and examinee_info.exa_stuID = grade_table.exa_stuID
+			and grade_table.ID = kaikao_course.ID
+			and kaikao_course.courseID = course.courseID
+			<if test="userID != null">
+			    and user_info.info_ID = #{userID}
+			</if>
+			order by test_time.exa_num DESC;
+    </select>
+    
+	<update id="updateCourseGradeByInstance" parameterType="CourseGrade">
+	    update grade_table 
+	    set ID=#{ID},
+	    exa_stuID=#{exa_stuID},
+	    courseID=#{courseID},
+	    grade=#{grade}
+	    where gradeID = #{gradeID};
+	</update>
+	
+</mapper>

@@ -15,6 +15,8 @@ public interface CourseDao {
 
 	public int updateCourseCreditById(@Param("courseID") Integer courseID, @Param("credit") Double credit);
 
+	// public int update
+
 	public int addCourse(@Param("course") Course course);
 
 }
