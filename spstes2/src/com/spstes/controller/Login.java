@@ -14,9 +14,8 @@ import com.spstes.service.LoginService;
 public class Login {
 	@Autowired
 	LoginService loginService;
-
-	@RequestMapping("/admin_login")
-	public void admin_login(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping("/admin")
+	public void adminLogin(HttpServletRequest request, HttpServletResponse response) {
 		//
 	}
 }
