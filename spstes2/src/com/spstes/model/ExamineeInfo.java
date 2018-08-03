@@ -1,16 +1,16 @@
 package com.spstes.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class ExamineeInfo implements Serializable {
-	private static final long serialVersionUID = 6870227443921708287L;
 
-	private BigInteger exa_stuID;
-	private BigInteger tex_exaID;
+	private static final long serialVersionUID = 8755478934420151950L;
+
+	private Integer exa_stuID;
+	private Integer tex_exaID;
 	private int info_ID;
-	private BigInteger exa_majorID;
-	private BigInteger exa_num;
+	private Integer exa_majorID;
+	private Integer exa_num;
 	private String exaID;
 	private int pass;
 
@@ -18,19 +18,19 @@ public class ExamineeInfo implements Serializable {
 		super();
 	}
 
-	public BigInteger getExa_stuID() {
+	public Integer getExa_stuID() {
 		return exa_stuID;
 	}
 
-	public void setExa_stuID(BigInteger exa_stuID) {
+	public void setExa_stuID(Integer exa_stuID) {
 		this.exa_stuID = exa_stuID;
 	}
 
-	public BigInteger getTex_exaID() {
+	public Integer getTex_exaID() {
 		return tex_exaID;
 	}
 
-	public void setTex_exaID(BigInteger tex_exaID) {
+	public void setTex_exaID(Integer tex_exaID) {
 		this.tex_exaID = tex_exaID;
 	}
 
@@ -42,19 +42,19 @@ public class ExamineeInfo implements Serializable {
 		this.info_ID = info_ID;
 	}
 
-	public BigInteger getExa_majorID() {
+	public Integer getExa_majorID() {
 		return exa_majorID;
 	}
 
-	public void setExa_majorID(BigInteger exa_majorID) {
+	public void setExa_majorID(Integer exa_majorID) {
 		this.exa_majorID = exa_majorID;
 	}
 
-	public BigInteger getExa_num() {
+	public Integer getExa_num() {
 		return exa_num;
 	}
 
-	public void setExa_num(BigInteger exa_num) {
+	public void setExa_num(Integer exa_num) {
 		this.exa_num = exa_num;
 	}
 

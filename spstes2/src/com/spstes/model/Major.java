@@ -1,12 +1,11 @@
 package com.spstes.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class Major implements Serializable {
 	private static final long serialVersionUID = 6920010666359037294L;
 
-	private BigInteger majorID;
+	private Integer majorID;
 	private String customID;
 	private String major_name;
 	private Double major_credit;
@@ -24,7 +23,7 @@ public class Major implements Serializable {
 	private String code_type;
 	private String technicality;
 	private String cap_major;
-	private BigInteger exaID;
+	private Integer exaID;
 	private Integer uniform_exa;
 	private String school;
 	private String client_dep;
@@ -32,17 +31,17 @@ public class Major implements Serializable {
 	private String pro_class;
 	private String pro_limit;
 	private String stoptime; // 此处使用String类型，数据库使用的是SQL中的datetime类型
-	private BigInteger stopID;
+	private Integer stopID;
 	private String stopdescribe;
 
 	public Major() {
 	}
 
-	public BigInteger getMajorID() {
+	public Integer getMajorID() {
 		return majorID;
 	}
 
-	public void setMajorID(BigInteger majorID) {
+	public void setMajorID(Integer majorID) {
 		this.majorID = majorID;
 	}
 
@@ -174,11 +173,11 @@ public class Major implements Serializable {
 		this.cap_major = cap_major;
 	}
 
-	public BigInteger getExaID() {
+	public Integer getExaID() {
 		return exaID;
 	}
 
-	public void setExaID(BigInteger exaID) {
+	public void setExaID(Integer exaID) {
 		this.exaID = exaID;
 	}
 
@@ -238,11 +237,11 @@ public class Major implements Serializable {
 		this.stoptime = stoptime;
 	}
 
-	public BigInteger getStopID() {
+	public Integer getStopID() {
 		return stopID;
 	}
 
-	public void setStopID(BigInteger stopID) {
+	public void setStopID(Integer stopID) {
 		this.stopID = stopID;
 	}
 

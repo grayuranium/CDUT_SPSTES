@@ -16,11 +16,11 @@
 	</update>
 	
 	<update id="updateMajorCreditId">
-	    update major set major_credit = #{credit} where major = #{majorID};
+	    update major set major_credit = #{credit} where majorID = #{majorID};
 	</update>
 	
 	<update id="updateMajorAnserById">
-	    update major set anser = #{anser} where major = #{majorID};
+	    update major set anser = #{anser} where majorID = #{majorID};
 	</update>
 	
 	<insert id="addMajor" parameterType="Major">

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spstes.dao.CourseDao">
+	<select id="getCourseByType" resultType="Course">
+     	select courseID,
+			course_name, 
+			course_credit, 
+			course_chara, 
+			cap_course, 
+			used, 
+			book_name 
+			from course, 
+			book_table 
+			where 
+			course.bookID = book_table.bookID
+			<if test="type != null">
+			    and cap_course = #{type}
+			</if>
+			;
+    </select>
+	
+	<update id="freezeCourseById">
+	    update course set used = #{status} where courseID = #{courseID};
+	</update>
+	
+	<update id="updateCourseCreditById">
+	    update course set course_credit = #{credit} where courseID = #{courseID};
+	</update>
+	
+	<insert id="addCourse" parameterType="Course">
+	    insert into course (course_name,
+			course_Ename,
+			course_credit, 
+			course_chara, 
+			cap_course, 
+			exa_method, 
+			offer_method,
+			bookID,
+			used) values (#{course_name},
+			#{course_Ename},
+			#{course_credit},
+			#{course_chara},
+			#{cap_course},
+			#{exa_method},
+			#{offer_method},
+			#{bookID},
+			#{used});
+	</insert>
+</mapper>

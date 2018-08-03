@@ -1,13 +1,12 @@
 package com.spstes.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class UserInfo implements Serializable {
 	private static final long serialVersionUID = -3025151142074903613L;
 
 	private Integer info_ID;
-	private BigInteger majorID;
+	private Integer majorID;
 	private String IDcard;
 	private String user_name;
 	private String login_name;
@@ -30,11 +29,11 @@ public class UserInfo implements Serializable {
 		this.info_ID = info_ID;
 	}
 
-	public BigInteger getMajorID() {
+	public Integer getMajorID() {
 		return majorID;
 	}
 
-	public void setMajorID(BigInteger majorID) {
+	public void setMajorID(Integer majorID) {
 		this.majorID = majorID;
 	}
 

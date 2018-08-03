@@ -1,13 +1,12 @@
 package com.spstes.model;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 
 public class TestTime implements Serializable {
 
 	private static final long serialVersionUID = 4767937954827249465L;
 
-	private BigInteger exa_num;
+	private Integer exa_num;
 	private String Estart_time; // 此处使用String类型，数据库使用的是SQL中的datetime类型
 	private String Estop_time; // 此处使用String类型，数据库使用的是SQL中的datetime类型
 	private String freeze;
@@ -18,11 +17,11 @@ public class TestTime implements Serializable {
 		super();
 	}
 
-	public BigInteger getExa_num() {
+	public Integer getExa_num() {
 		return exa_num;
 	}
 
-	public void setExa_num(BigInteger exa_num) {
+	public void setExa_num(Integer exa_num) {
 		this.exa_num = exa_num;
 	}
 

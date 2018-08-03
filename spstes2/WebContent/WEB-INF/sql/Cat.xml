@@ -3,7 +3,7 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spstes.dao.CatDao">
-	<select id="findCatById" parameterType="int" resultType="Cat">
+	<select id="findCatById" parameterType="int" resultType="com.spstes.model.Cat">
      	select * from tb_cat where CatID = #{id}
     </select>
 </mapper>
