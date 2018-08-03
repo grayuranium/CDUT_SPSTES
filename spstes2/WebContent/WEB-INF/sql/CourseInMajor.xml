@@ -16,7 +16,7 @@
 			from course, 
 			major, 
 			cource_type 
-			where cource_type.courseID = course.courseID 
+			where cource_type.courseID = course.courseID
 			and cource_type.majorID = major.majorID
 			<if test="majorID != null">
 			    and major.majorID = #{majorID}
