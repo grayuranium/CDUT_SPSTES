@@ -83,6 +83,7 @@ public class UserInfo implements Serializable {
 	}
 
 	public void setUser_age(Integer user_age) {
+
 		this.user_age = user_age;
 	}
 
