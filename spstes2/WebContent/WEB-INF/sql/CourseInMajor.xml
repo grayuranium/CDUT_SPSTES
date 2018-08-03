@@ -9,7 +9,7 @@
 			cource_type.majorID, 
 			bookID,course_name,
 			course_Ename,
-			course_credit,
+			course_credit, 
 			course_type,
 			exa_method,
 			offer_method 
