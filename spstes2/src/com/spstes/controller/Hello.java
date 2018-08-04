@@ -1,5 +1,7 @@
 package com.spstes.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +35,15 @@ public class Hello {
 		System.out.println("findUserByAccount() : " + user2);
 		UserInfo user3 = registerService.finUserByIDCard(IDCard);
 		System.out.println("finUserByIDCard() : " + user3);
+
+		ArrayList<String> cities = new ArrayList<String>();
+		cities.add("北京");
+		cities.add("上海");
+		cities.add("广州");
+		cities.add("深圳");
+		cities.add("成都");
+
+		mv.addObject("cities", cities);
 
 		mv.setViewName("index");
 		return mv;

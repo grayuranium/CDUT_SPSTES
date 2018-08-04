@@ -1,5 +1,6 @@
 package com.spstes.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -56,7 +57,7 @@ public class Admin {
 		Integer type = Integer.valueOf(request.getParameter("type"));
 		if (type == 0) {
 			// 显示图表
-			List<TestTime> testTimes = testTimeService.offerAllTestTime();
+			ArrayList<TestTime> testTimes = testTimeService.offerAllTestTime();
 			ModelAndView model = new ModelAndView();
 			model.addObject("testtimes", testTimes);
 			model.setView("");
