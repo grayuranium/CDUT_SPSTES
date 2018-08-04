@@ -37,4 +37,33 @@ public class Hello {
 		mv.setViewName("index");
 		return mv;
 	}
+
+	@RequestMapping("/jsp/student/")
+	public ModelAndView index1() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("student/index");
+		return mv;
+	}
+
+	@RequestMapping("/student/right")
+	public ModelAndView right() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("student/right");
+		return mv;
+	}
+
+	@RequestMapping("/student/StudentLogin")
+	public ModelAndView slogin() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("student/StudentLogin");
+		return mv;
+	}
+
+	@RequestMapping("/admin/Login")
+	public ModelAndView alogin() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/AdminLogin");
+		return mv;
+	}
+
 }

@@ -1,7 +1,12 @@
 package com.spstes.service;
 
-public interface PassengerService {
-	public void searchProfession();
+import java.util.ArrayList;
 
-	public void searchCourse();
+import com.spstes.model.PreparedCourse;
+import com.spstes.model.PreparedMajor;
+
+public interface PassengerService {
+	public ArrayList<PreparedMajor> searchProfession();
+
+	public ArrayList<PreparedCourse> searchCourse();
 }

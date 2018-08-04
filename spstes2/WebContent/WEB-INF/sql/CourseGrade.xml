@@ -41,4 +41,10 @@
 	    where gradeID = #{gradeID};
 	</update>
 	
+	<update id="updateCourseGradeById">
+	    update grade_table 
+	    grade=#{grade}
+	    where gradeID = #{gradeID};
+	</update>
+	
 </mapper>

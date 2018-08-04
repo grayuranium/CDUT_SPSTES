@@ -47,7 +47,7 @@ public class Login {
 			response.getWriter().write("no"); // 返回登陆失败
 		else {
 			HttpSession session = request.getSession(true); // 如果没有session，就创建一个
-			session.setAttribute("user", user); // 保存管理员信息
+			session.setAttribute("user", user); // 保存用户信息
 			response.getWriter().write("yes"); // 放回登陆成功
 		}
 	}

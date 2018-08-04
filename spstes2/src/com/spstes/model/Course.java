@@ -20,6 +20,8 @@ public class Course implements Serializable {
 	private String course_eva;
 	private String bridge_course;
 	private String book_name;
+	private String used;
+	private String cap_course;
 
 	public Course() {
 	}
@@ -142,5 +144,21 @@ public class Course implements Serializable {
 
 	public void setBook_name(String book_name) {
 		this.book_name = book_name;
+	}
+
+	public String getUsed() {
+		return used;
+	}
+
+	public void setUsed(String used) {
+		this.used = used;
+	}
+
+	public String getCap_course() {
+		return cap_course;
+	}
+
+	public void setCap_course(String cap_course) {
+		this.cap_course = cap_course;
 	}
 }

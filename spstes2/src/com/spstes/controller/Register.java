@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,7 @@ public class Register {
 	@RequestMapping("/user_valid")
 	public void userValid(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String login_name = request.getParameter("loginname");
+		System.out.println("请求到来");
 		// 可能请求中根本没有loginname参数
 		if (null == login_name)
 			response.getWriter().write("no");
@@ -43,7 +45,7 @@ public class Register {
 		String user_name = request.getParameter("Lname");
 		String login_name = request.getParameter("loginname");
 		String user_paw = request.getParameter("Lpassword");
-		String user_sex = request.getParameter("gender"); // 隐藏域传值
+		String user_sex = request.getParameter("gender");
 		String telphone = request.getParameter("tel");
 
 		UserInfo user = new UserInfo();
@@ -60,9 +62,12 @@ public class Register {
 		if (registerService.userValidation(user)) {
 			// 用户信息通过验证，则插入记录到数据库
 			int num = registerService.addUser(user);
-			if (num == 1)
+			if (num == 1) {
+				HttpSession session = request.getSession(true); // 如果没有session，就创建一个
+				session.setAttribute("user", user); // 保存用户信息
+				response.getWriter().write("yes"); // 放回登陆成功
 				response.getWriter().write("yes");
-			else
+			} else
 				response.getWriter().write("no");
 		} else // 用户信息没有通过验证
 			response.getWriter().write("no");

@@ -33,6 +33,7 @@ public class Major implements Serializable {
 	private String stoptime; // 此处使用String类型，数据库使用的是SQL中的datetime类型
 	private Integer stopID;
 	private String stopdescribe;
+	private String anser;
 
 	public Major() {
 	}
@@ -259,5 +260,13 @@ public class Major implements Serializable {
 
 	public void setUsed(String used) {
 		this.used = used;
+	}
+
+	public String getAnser() {
+		return anser;
+	}
+
+	public void setAnser(String anser) {
+		this.anser = anser;
 	}
 }

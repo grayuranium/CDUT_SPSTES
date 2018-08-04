@@ -13,4 +13,6 @@ public interface CourseGradeDao {
 	public ArrayList<CourseGrade> getAllCourseGradeByUserId(@Param("userID") Integer userID);
 
 	public int updateCourseGradeByInstance(CourseGrade courseGrade);
+
+	public int updateCourseGradeById(@Param("gradeID") Integer gradeID, @Param("grade") Double grade);
 }

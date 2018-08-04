@@ -7,7 +7,7 @@
      	select * from user_info where login_name = #{login_name} and user_paw = #{pwd};
     </select>
     
-	<select id="findAdminByAccountAndPwd" resultType="UserInfo">
+	<select id="findAdminByAccountAndPwd" resultType="Admin">
      	select * from administrator where login_name = #{login_name} and mag_paw = #{pwd};
     </select>
 </mapper>

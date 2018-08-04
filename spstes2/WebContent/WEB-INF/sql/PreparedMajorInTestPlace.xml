@@ -3,6 +3,20 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spstes.dao.PreparedMajorInTestPlaceDao">
+    
+    <select id="getAll" resultType="PreparedMajorInTestPlace">
+        select test_place.test_name,
+			test_place.test_addr,
+			major.major_name,
+			major.prof_level,
+			major.Prof_type,
+			test_placeandkaikao_major.id as ID
+			from test_place,major, kaikao_major, test_placeandkaikao_major  
+			where test_placeandkaikao_major.exaID = test_place.exaID 
+			and test_placeandkaikao_major.exa_majorID = kaikao_major.exa_majorID 
+			and kaikao_major.majorID = major.majorID;
+    </select>
+    
 	<delete id="deletePreparedMajorInTestPlaceById" parameterType="Integer">
 	    delete from test_placeandkaikao_major where id = #{ID};
 	</delete>
