@@ -49,32 +49,68 @@ public class Hello {
 		return mv;
 	}
 
-	@RequestMapping("/jsp/student/")
-	public ModelAndView index1() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("student/index");
-		return mv;
-	}
+	// @RequestMapping("/student/index/")
+	// public ModelAndView index1() {
+	// ModelAndView mv = new ModelAndView();
+	// mv.setViewName("student/index");
+	// return mv;
+	// }
+	//
+	// @RequestMapping("/student/right")
+	// public ModelAndView right() {
+	// ModelAndView mv = new ModelAndView();
+	// mv.setViewName("student/right");
+	// return mv;
+	// }
 
-	@RequestMapping("/student/right")
-	public ModelAndView right() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("student/right");
-		return mv;
-	}
-
-	@RequestMapping("/student/StudentLogin")
+	@RequestMapping("/studentLogin")
 	public ModelAndView slogin() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("student/StudentLogin");
 		return mv;
 	}
 
-	@RequestMapping("/admin/Login")
+	@RequestMapping("/adminLogin")
 	public ModelAndView alogin() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("admin/AdminLogin");
 		return mv;
 	}
 
+	// cheng
+
+	@RequestMapping("/admin/index")
+	public ModelAndView aindex() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/index");
+		return mv;
+	}
+
+	@RequestMapping("/admin/kaoci")
+	public ModelAndView kaoci() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/kaoci");
+		return mv;
+	}
+
+	@RequestMapping("/admin/procurma")
+	public ModelAndView procurma() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/Procurma");
+		return mv;
+	}
+
+	@RequestMapping("/admin/proma")
+	public ModelAndView proma() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/Proma");
+		return mv;
+	}
+
+	@RequestMapping("/admin/score")
+	public ModelAndView score() {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("admin/score");
+		return mv;
+	}
 }

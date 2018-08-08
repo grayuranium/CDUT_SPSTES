@@ -20,6 +20,18 @@
        <!-- 扫包 -->
        <context:component-scan base-package="com.spstes.controller"></context:component-scan>
       
+       
+       <!--拦截器 -->
+	<mvc:interceptors>
+		<!--多个拦截器,顺序执行 -->
+		<mvc:interceptor>
+			<!-- /**表示所有url包括子url路径 -->
+			<mvc:mapping path="/**" />
+			<bean class="com.spstes.interceptor.InterceptorImpl1"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+       
+       
     
        <!-- 视图渲染 jsp/freemaker/velocity-->
        <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -31,8 +43,11 @@
        
        <!-- 配置静态资源 -->
 	   <mvc:resources location="/WEB-INF/css/" mapping="/css/**"/>
+	   <mvc:resources location="/WEB-INF/font/" mapping="/font/**"/>
 	   <mvc:resources location="/WEB-INF/img/" mapping="/img/**"/>
 	   <mvc:resources location="/WEB-INF/js/" mapping="/js/**"/>
 	   <mvc:resources location="/WEB-INF/html/" mapping="/html/**"/>
+	   <mvc:resources location="/WEB-INF/tubiao/" mapping="/tubiao/**"/>
+    	<mvc:resources location="/WEB-INF/fonts/" mapping="/fonts/**"/>
        
 </beans>

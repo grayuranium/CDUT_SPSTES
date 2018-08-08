@@ -10,6 +10,8 @@ public interface TestTimeDao {
 
 	public TestTime findLatestTestTime();
 
+	public int getInstanceNum();
+
 	public ArrayList<TestTime> getLimitedTestTime(@Param("fromIndex") int fromIndex, @Param("amount") int amount);
 
 	public int addTestTime(TestTime testTime);

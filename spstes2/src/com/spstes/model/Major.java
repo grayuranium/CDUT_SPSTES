@@ -11,14 +11,15 @@ public class Major implements Serializable {
 	private Double major_credit;
 	private String major_cour;
 	private String used;
+	private String anser;
 	private String AQL;
 	private String examine;
 	private String examinetime; // 此处使用String类型，数据库使用的是SQL中的datetime类型
 	private String remark;
 	private String verify;
 	private String examineNum;
-	private String porf_level;
-	private String porf_type;
+	private String prof_level;
+	private String Prof_type;
 	private String exa_type;
 	private String code_type;
 	private String technicality;
@@ -33,7 +34,6 @@ public class Major implements Serializable {
 	private String stoptime; // 此处使用String类型，数据库使用的是SQL中的datetime类型
 	private Integer stopID;
 	private String stopdescribe;
-	private String anser;
 
 	public Major() {
 	}
@@ -126,20 +126,20 @@ public class Major implements Serializable {
 		this.examineNum = examineNum;
 	}
 
-	public String getPorf_level() {
-		return porf_level;
+	public String getProf_level() {
+		return prof_level;
 	}
 
-	public void setPorf_level(String porf_level) {
-		this.porf_level = porf_level;
+	public void setProf_level(String porf_level) {
+		this.prof_level = porf_level;
 	}
 
-	public String getPorf_type() {
-		return porf_type;
+	public String getProf_type() {
+		return Prof_type;
 	}
 
-	public void setPorf_type(String porf_type) {
-		this.porf_type = porf_type;
+	public void setProf_type(String porf_type) {
+		this.Prof_type = porf_type;
 	}
 
 	public String getExa_type() {

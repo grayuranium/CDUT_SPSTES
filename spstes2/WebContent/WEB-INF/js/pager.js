@@ -1,4 +1,4 @@
-function Page(opt){
+﻿function Page(opt){
 		var set = $.extend({num:null,startnum:1,elem:null,callback:null},opt||{});
 		if(set.startnum>set.num||set.startnum<1){
 			set.startnum = 1;
@@ -185,3 +185,4 @@ function Page(opt){
 			clickpages.newPages("jump",set.startnum)
 		}
 }
+

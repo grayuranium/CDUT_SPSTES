@@ -15,4 +15,5 @@ public interface CourseService {
 	public void freezeCourseById(Integer id, String freeze);
 
 	public void updateCreditById(Integer id, Double credit);
+
 }

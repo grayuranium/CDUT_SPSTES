@@ -3,11 +3,13 @@ package com.spstes.service.impl;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.spstes.dao.TestPlaceDao;
 import com.spstes.model.TestPlace;
 import com.spstes.service.TestPlaceService;
 
+@Service
 public class TestPlaceServiceImpl implements TestPlaceService {
 	@Autowired
 	TestPlaceDao testplacedao;

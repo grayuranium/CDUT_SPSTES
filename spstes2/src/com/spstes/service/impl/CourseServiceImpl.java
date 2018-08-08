@@ -3,11 +3,13 @@ package com.spstes.service.impl;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.spstes.dao.CourseDao;
 import com.spstes.model.Course;
 import com.spstes.service.CourseService;
 
+@Service
 public class CourseServiceImpl implements CourseService {
 	@Autowired
 	CourseDao coursedao;

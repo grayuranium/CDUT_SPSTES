@@ -10,7 +10,12 @@ public interface TestTimeService {
 
 	public ArrayList<TestTime> offerAllTestTime();
 
-	public void modifyTestTime(TestTime time);
+	public int getInstanceNum();
 
-	public void addTestTime(TestTime time);
+	public ArrayList<TestTime> getLimitedTestTime(int from_index, int amount);
+
+	public int modifyTestTime(TestTime time);
+
+	public int addTestTime(TestTime time);
+
 }

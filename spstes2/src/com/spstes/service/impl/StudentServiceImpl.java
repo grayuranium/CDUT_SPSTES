@@ -1,7 +1,10 @@
 package com.spstes.service.impl;
 
+import org.springframework.stereotype.Service;
+
 import com.spstes.service.StudentService;
 
+@Service
 public class StudentServiceImpl implements StudentService {
 
 	@Override

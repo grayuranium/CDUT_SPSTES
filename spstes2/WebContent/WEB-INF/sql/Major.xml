@@ -3,19 +3,37 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spstes.dao.MajorDao">
-	<select id="getMajorByType" parameterType="String" resultType="Major">
-     	select * from Major
+    
+    <select id="getMajorByType" parameterType="String" resultType="Major">
+     	select * from major
      	<if test="type != null">
      	    where cap_major = #{type}
      	</if>
      	;
     </select>
     
+	<select id="getLimitedMajorByType" parameterType="String" resultType="Major">
+     	select * from major
+     	<if test="type != null">
+     	    where cap_major = #{type}
+     	</if>
+     	limit #{fromIndex}, #{amount};
+     	;
+    </select>
+    
+	<select id="getInstanceNum" resultType="int">
+	    select count(*) as InstanceNum from major
+     	<if test="type != null">
+     	    where cap_major = #{type}
+     	</if>
+     	;
+	</select>
+    
 	<update id="freezeMajorById">
 	    update major set used = #{status} where majorID = #{majorID};
 	</update>
 	
-	<update id="updateMajorCreditId">
+	<update id="updateMajorCreditById">
 	    update major set major_credit = #{credit} where majorID = #{majorID};
 	</update>
 	

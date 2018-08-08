@@ -19,26 +19,12 @@ public class Passenger {
 
 	@RequestMapping("/passenger")
 	public ModelAndView searchProfessionAndCourse() {
-		ModelAndView modelAndView = new ModelAndView();
-
 		ArrayList<PreparedMajor> majors = passengerservice.searchProfession();
 		ArrayList<PreparedCourse> courses = passengerservice.searchCourse();
-		modelAndView.addObject("major", majors.get(0));
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("majors", majors);
 		modelAndView.addObject("courses", courses);
-
-		ArrayList<String> cities = new ArrayList<String>();
-		cities.add("北京");
-		cities.add("上海");
-		cities.add("广州");
-		cities.add("深圳");
-		cities.add("成都");
-
-		modelAndView.addObject("cities", cities);
-
 		modelAndView.setViewName("passenger");
 		return modelAndView;
-
-		// model.addAttribute("cities", cities);
-		// return "index";
 	}
 }

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Sign-Up/Login Form</title>
+<title>用户登录</title>
 <link
 	href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600'
 	rel='stylesheet' type='text/css'>
@@ -14,9 +14,10 @@
 	src="${pageContext.request.contextPath}/js/main.js"></script>
 <script type="text/javascript"
 	src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
-
+<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-confirm.min.js"></script>
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/StudentLogin.css">
+<link href="${pageContext.request.contextPath}/css/jquery-confirm.min.css" rel="stylesheet">
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("input[name='IDcard']").blur(function() { //失去焦点
@@ -26,7 +27,14 @@
 			if (!regstr1.test(IDstr)) {
 					// $(this).parent().next().html("身份证号不合法");
 					//$("input[name='loginname']").val("no");
-					alert("身份证号不合法");
+					alert('身份证号不合法...');
+					
+					// 为什么不行？？
+				    /* $.alert({
+				        title: 'Emmm...',
+				        content: '身份证号不合法...',
+				    }); */
+					
 					return false;
 				} else {
 					return true;
@@ -108,7 +116,7 @@
 					} else {
 						// 注册成功
 						// 跳转至首页
-						alert("seccuess");
+						window.location.href='${pageContext.request.contextPath}/student/index';
 					}
 				}
 			});
@@ -132,7 +140,7 @@
 					} else {
 						// 登陆成功
 						// 跳转至首页
-						alert("seccuess");
+						window.location.href='${pageContext.request.contextPath}/student/index';
 					}
 				}
 			});
@@ -255,7 +263,7 @@
 	<script
 		src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-	<script src="../js/StudentLogin.js"></script>
+	<script src="${pageContext.request.contextPath}/js/StudentLogin.js"></script>
 
 </body>
 </html>

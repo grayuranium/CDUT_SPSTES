@@ -8,7 +8,12 @@ import com.spstes.model.Major;
 
 public interface MajorDao {
 
+	public int getInstanceNum(@Param("type") String type);
+
 	public ArrayList<Major> getMajorByType(@Param("type") String type);
+
+	public ArrayList<Major> getLimitedMajorByType(@Param("type") String type, @Param("fromIndex") int fromIndex,
+			@Param("amount") int account);
 
 	public int freezeMajorById(@Param("majorID") Integer majorID, @Param("status") String status);
 

@@ -17,6 +17,6 @@ public interface CourseDao {
 
 	// public int update
 
-	public int addCourse(@Param("course") Course course);
+	public int addCourse(Course course);
 
 }

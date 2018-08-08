@@ -3,6 +3,20 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spstes.dao.CourseInMajorDao">
+    
+    <select id="getInstanceNum" parameterType="Integer" resultType="int">
+        select count(*) as instanseNum 
+        from course, 
+			major, 
+			cource_type 
+			where cource_type.courseID = course.courseID
+			and cource_type.majorID = major.majorID
+			<if test="majorID != null">
+			    and major.majorID = #{majorID}
+			</if>
+			;
+    </select>
+    
 	<select id="findCourseByMajorID" parameterType="Integer" resultType="CourseInMajor">
      	select cource_type.couritypeID,
 			cource_type.courseID, 
@@ -24,6 +38,29 @@
 			;
     </select>
     
+	
+	<select id="findLimitedCourseByMajorID" parameterType="Integer" resultType="CourseInMajor">
+     	select cource_type.couritypeID,
+			cource_type.courseID, 
+			cource_type.majorID, 
+			bookID,course_name,
+			course_Ename,
+			course_credit, 
+			course_type,
+			exa_method,
+			offer_method 
+			from course, 
+			major, 
+			cource_type 
+			where cource_type.courseID = course.courseID
+			and cource_type.majorID = major.majorID
+			<if test="majorID != null">
+			    and major.majorID = #{majorID}
+			</if>
+			limit #{fromIndex}, #{amount}
+			;
+    </select>
+	
 	<update id="updateCourseByInstance" parameterType="CourseInMajor">
 	    update cource_type  set majorID = #{majorID}, 
 		courseID = #{courseID}, 

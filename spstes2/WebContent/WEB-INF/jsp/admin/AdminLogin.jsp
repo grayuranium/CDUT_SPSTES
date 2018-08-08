@@ -9,6 +9,8 @@
 	<title>管理员登录</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href="${pageContext.request.contextPath}/css/jquery-confirm.min.css" rel="stylesheet">
+	
 	<style type="text/css">
 		.form-bg{
 		    background: rgba(82, 83, 85, 0.897);
@@ -140,9 +142,10 @@
 	</style>
 	
 	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.9.1.js"></script>
+	<script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-confirm.min.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
-		
+	    
 		// 管理员登陆
 		$("#alogin").click(function(){
 			var lgaccount = $("#inputEmail3").val();
@@ -156,11 +159,18 @@
 				async : true,
 				success : function(msg) {
 					if (msg == "no") {
-						alert("账号或者密码错误！");
+						$.alert({
+					        title: '提示',
+					        content: '账号或者密码错误...',
+					    });
 					} else {
 						// 登陆成功
 						// 跳转至首页
-						alert("seccuess");
+						$.alert({
+					        title: '提示',
+					        content: '登陆成功,正在跳转...',
+					    });
+						window.location.href='${pageContext.request.contextPath}/admin/index';
 					}
 				}
 			});
@@ -181,7 +191,7 @@
 		            <div class="row">
 		                <div class="col-md-offset-3 col-md-6">
 		                    <div class="form-horizontal">
-		                        <span class="heading">用户登录</span>
+		                        <span class="heading">管理员登录</span>
 		                        <div class="form-group">
 		                            <input type="text" class="form-control" id="inputEmail3" placeholder="用户名" name="username">
 		                            <i class="fa fa-user"></i>
@@ -192,11 +202,6 @@
 		                            <a href="#" class="fa fa-question-circle"></a>
 		                        </div>
 		                        <div class="form-group">
-		                            <div class="main-checkbox">
-		                                <input type="checkbox" value="None" id="checkbox1" name="check"/>
-		                                <label for="checkbox1"></label>
-		                            </div>
-		                            <span class="text">Remember me</span>
 		                            <button id="alogin" class="btn btn-default">登录</button>
 		                        </div>
 		                    </div>

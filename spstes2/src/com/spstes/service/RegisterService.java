@@ -13,4 +13,5 @@ public interface RegisterService {
 	public String ISO2UTF8(String src);
 
 	public int addUser(UserInfo user);
+
 }

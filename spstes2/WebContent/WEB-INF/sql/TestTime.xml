@@ -17,6 +17,10 @@
 			order by Bend_time ASC limit 1;
     </select>
     
+    <select id="getInstanceNum" resultType="int">
+        select count(*) as InstanceNum from test_time;
+    </select>
+    
 	<select id="getLimitedTestTime" resultType="TestTime">
      	select exa_num, 
 			date_format(Estart_time, '%Y-%m-%d %H:%i') as Estart_time,
@@ -25,7 +29,7 @@
 			date_format(Bstart_time, '%Y-%m-%d %H:%i') as Bstart_time,
 			date_format(Bend_time, '%Y-%m-%d %H:%i') as Bend_time
 			from test_time
-			order by Estart_time, Bstart_time
+			order by Estart_time  DESC, Bstart_time  DESC, exa_num DESC
 			limit #{fromIndex}, #{amount};
     </select>
     
